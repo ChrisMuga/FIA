@@ -1,0 +1,29 @@
+extends layouts/main 
+block content
+    style.
+        .b0{border-radius: 0}
+        .bold{font-weight: bold;}
+    div( class = "row d-flex justify-content-center")
+        div( class = "col-md-6 p-4")
+            each user, index in users
+                div(class = "alert alert-secondary my-1 b0")
+                    p(class = "bold") #{index + 1}
+                    hr
+                    div(class = "text-right")
+                        h3 #{user.fullName}
+                        h5 #{user.emailAddress}
+                    hr
+                    p <i class="fas fa-location-arrow"></i> #{user.physicalAddress}
+                    p <i class="fas fa-university"></i> #{user.universityCampus}
+                    p <i class="fas fa-phone"></i> #{user.mobileNumber}
+                    -
+                        var locationPreferences = user.locationPreference.split(',')
+                    hr
+                    h3
+                        u Prefered Locations 
+                    <i class="fas fa-map-marker-alt"></i>
+                    each locationPreference in locationPreferences
+                        badge(class="badge badge-primary mx-1") #{locationPreference}
+                    
+                    
+                    
