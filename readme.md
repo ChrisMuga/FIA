@@ -18,3 +18,4 @@ This is a NodeJS - Express App.
 
 1. go to file `/controllers/databaseController.js`
 2. Replace the values accordingly on line 2 ... `new Sequelize('FIA', 'muga', 'asphalt11'...`
+3. If you make any changes on the app when running npm start youll have to stop and restart the app. `CTRL + C` then `npm start`
