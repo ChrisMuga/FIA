@@ -1,3 +1,8 @@
+:root {
+  --primary: #b0632a;
+  --secondary: #b0a297;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -5,13 +10,104 @@ html, body {
 }
 
 a {
-  text-decoration: underline;
   color: inherit;
+  text-decoration: none;
+  position: relative;
+}
+
+a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+a .slider {
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 90%;
+  margin: 0 auto;
+  height: 2px;
+  background-color: white;
+  width: 0%;
+  transition: width 0.5s ease;
+}
+
+a:hover .slider {
+  width: 100%;
 }
 
 .btn {
-  background: #59A92F;
+  background: var(--primary);
   color: white;
+}
+
+.logo {
+  width: 40px;
+}
+
+.bg-default {
+  background: var(--primary);
+  color: white;
+}
+
+nav.my-navbar {
+  position: fixed;
+  font-size: 1.5em;
+  z-index: 3;
+  padding: 0.5em 0;
+  left: 2em;
+  /*width: 100%;*/
+  display: flex;
+  align-items: center;
+  transition: background 1s;
+  color: white;
+  background: var(--primary);
+}
+
+nav.mynavbar img {
+  height: 40px;
+  margin: 0 1em;
+  transition: 0.5s;
+}
+
+.sidebar {
+  background: var(--secondary);
+  color: white;
+  position: fixed;
+  height: 100vh;
+  width: 15em;
+  z-index: 5;
+  transition: left 0.5s;
+}
+
+.sidebar ul {
+  height: 100%;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.sidebar ul li {
+  padding: 1em 0;
+}
+
+#menuClose {
+  position: absolute;
+  right: 16px;
+  top: 10px;
+  font-size: 3em;
+}
+
+.hide {
+  left: -15em;
+}
+
+.show {
+  left: 0;
 }
 
 #landing {
@@ -32,6 +128,7 @@ a {
 }
 
 #landing h1 {
+  padding-top: 1em;
   font-size: 6em;
 }
 
@@ -64,6 +161,32 @@ input[type="checkbox"] {
 }
 
 #contact {
-  background: #59A92F;
+  background: var(--primary);
   color: white;
+}
+
+.social a {
+  font-size: 2em;
+  padding: 0.5em;
+}
+
+.social a i {
+  transition: transform 0.3s;
+}
+
+.social a:hover i {
+  transform: scale(1.2);
+}
+
+@media only screen and (max-width: 425px) {
+  #landing h1 {
+    padding-top: 1em;
+    font-size: 3em;
+  }
+  #landing h3 {
+    font-size: 1.5em;
+  }
+  #landing p {
+    font-size: 1em;
+  }
 }
